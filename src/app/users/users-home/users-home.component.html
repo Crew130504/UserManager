@@ -1,34 +1,32 @@
-<div class="container mt-4">
-  <h2 class="text-center">Welcome, {{ username }}!</h2>
-  <p class="text-muted text-center">You are logged in.</p>
-  <button class="btn btn-danger mb-3" (click)="logout()">Logout</button>
+<div class="user-table-wrapper">
+  <div class="user-table-container">
+    <div *ngIf="isLoading" class="text-center">
+      <p>Loading users...</p>
+    </div>
 
-  <div *ngIf="isLoading" class="text-center">
-    <p>Cargando usuarios...</p>
+    <div *ngIf="errorMessage" class="alert alert-danger text-center">
+      {{ errorMessage }}
+    </div>
+
+    <table *ngIf="!isLoading && users.length" class="table table-hover align-middle">
+      <thead class="table-header">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th class="text-end">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td class="text-end">
+            <button class="btn btn-sm btn-action" (click)="viewDetails(user.id)">
+              Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-  <div *ngIf="errorMessage" class="alert alert-danger">
-    {{ errorMessage }}
-  </div>
-
-  <table *ngIf="!isLoading && users.length" class="table table-hover">
-    <thead class="table-dark">
-      <tr>
-        <th>Nombre</th>
-        <th>Correo electrónico</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.name }}</td>
-        <td>{{ user.email }}</td>
-        <td>
-          <button class="btn btn-outline-primary btn-sm" (click)="verDetalles(user.id)">
-            Detalles
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>

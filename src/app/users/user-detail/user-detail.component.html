@@ -1,0 +1,26 @@
+<div class="user-detail-container">
+  <div *ngIf="isLoading" class="text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger text-center">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!isLoading && user" class="user-detail-card">
+    <div class="header">
+      <h4>User Details</h4>
+    </div>
+    <div class="body">
+      <p><strong>ID:</strong> {{ user.id }}</p>
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+    </div>
+    <div class="footer">
+      <button class="btn btn-back" (click)="goBack()">← Back</button>
+    </div>
+  </div>
+</div>

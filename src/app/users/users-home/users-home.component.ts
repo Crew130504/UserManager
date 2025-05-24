@@ -44,7 +44,8 @@ export class UsersHomeComponent implements OnInit {
     this.router.navigate(['/auth']);
   }
 
-  verDetalles(id: number): void {
+  viewDetails(id: number): void {
     this.router.navigate(['/users', id]);
   }
+
 }
