@@ -1,6 +1,10 @@
 <div class="login-page">
+  <img src="/assets/logo.png" alt="Background Logo" class="login-background-logo" />
+
   <div class="login-wrapper">
-    <h2 class="text-primary">Sign In</h2>
+    <div class="login-header">
+      <img src="/assets/logo.png" alt="Logo" class="login-header-logo" />
+    </div>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
