@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <div *ngIf="isLoading" class="text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger text-center">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!isLoading && user" class="card shadow-sm mx-auto" style="max-width: 500px;">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">User Details</h4>
+    </div>
+    <div class="card-body">
+      <p><strong>ID:</strong> {{ user.id }}</p>
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+    </div>
+    <div class="card-footer text-end">
+      <button class="btn btn-secondary" (click)="goBack()">← Back</button>
+    </div>
+  </div>
+</div>

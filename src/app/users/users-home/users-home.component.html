@@ -4,7 +4,7 @@
   <button class="btn btn-danger mb-3" (click)="logout()">Logout</button>
 
   <div *ngIf="isLoading" class="text-center">
-    <p>Cargando usuarios...</p>
+    <p>Loading users...</p>
   </div>
 
   <div *ngIf="errorMessage" class="alert alert-danger">
@@ -14,9 +14,9 @@
   <table *ngIf="!isLoading && users.length" class="table table-hover">
     <thead class="table-dark">
       <tr>
-        <th>Nombre</th>
-        <th>Correo electrónico</th>
-        <th>Acciones</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -24,8 +24,8 @@
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
         <td>
-          <button class="btn btn-outline-primary btn-sm" (click)="verDetalles(user.id)">
-            Detalles
+          <button class="btn btn-outline-primary btn-sm" (click)="viewDetails(user.id)">
+            Details
           </button>
         </td>
       </tr>
