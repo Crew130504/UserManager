@@ -1,59 +1,116 @@
-# UserManager
+# User Manager (Angular App)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+## Overview
 
-## Development server
+User Manager is a modular Angular application designed for user login, listing, and detail display. It implements best practices in UI/UX, SCSS design, and project architecture while using a Postman mock API via json-server.
 
-To start a local development server, run:
+---
+
+## Features
+
+* User login with password visibility toggle
+* Authentication via mock server
+* Protected user list view with table and actions
+* User detail view with navigation
+* Layout component with navbar and logout button
+* Responsive UI with SCSS and Bootstrap utilities
+* Animated gradient background and transitions
+
+---
+
+## Technologies Used
+
+* Angular 17+
+* TypeScript
+* SCSS (custom design system)
+* json-server (Postman mock API)
+* Bootstrap 5 (utility classes)
+
+---
+
+## Project Structure
+
+```plaintext
+src/app/
+├── auth/
+│   └── login/
+├── users/
+│   ├── users-home/
+│   └── user-detail/
+├── core/
+│   ├── layout/
+│   ├── services/
+│   └── guards/
+├── app-routing.module.ts
+└── app.module.ts
+```
+
+Other folders:
+
+* `src/assets/` → logo and icon
+* `src/styles.scss` → global styles
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone <repo-url>
+cd user-manager
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the mock server (on a separate terminal)
+
+```bash
+npx json-server --watch db.json --port 3000
+```
+
+### 4. Start the Angular app
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open your browser at `http://localhost:4200`
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Mock API
 
-```bash
-ng generate component component-name
+The application uses a local mock server (`db.json`) for simulating backend operations.
+Endpoints include:
+
+* `GET /users`
+* `GET /users/:id`
+* `POST /login` (simulated in AuthService)
+
+---
+
+## Branches
+
+```plaintext
+main           # Stable release
+users          # User list and detail features
+login          # Login UI and logic
+docs           # Architecture and documentation
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## License
 
-## Building
+This project is for educational and demonstration purposes.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## Author
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Created by the development team as part of a technical assignment.
