@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   declarations: [LayoutComponent],
   imports: [
     CommonModule,
-    RouterModule // ← esto es lo que faltaba
+    RouterModule 
   ],
   exports: [LayoutComponent]
 })
