@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 
 import { AuthModule } from './auth/auth.module';    
 import { UsersModule } from './users/users.module'; 
+import { CoreModule } from './core/core.module'; 
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { UsersModule } from './users/users.module';
     CommonModule,
     ReactiveFormsModule,
     AuthModule,
-    UsersModule
+    UsersModule,
+    CoreModule
   ],
   bootstrap: [AppComponent]
 })

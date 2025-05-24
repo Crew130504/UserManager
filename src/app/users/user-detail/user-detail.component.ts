@@ -34,7 +34,7 @@ export class UserDetailComponent implements OnInit {
     });
   }
   goBack(): void {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/users/home']);
   }
 
 }

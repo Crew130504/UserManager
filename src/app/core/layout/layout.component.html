@@ -1,0 +1,19 @@
+<nav class="navbar custom-navbar">
+  <div class= "navbar-content">
+    <div class="user-info">
+      <span class="text-white ">Welcome, {{ username }}</span>
+    </div>
+
+    <div class="logo-container">
+      <img src="/assets/icon.png" alt="Logo" class="navbar-logo" />
+    </div>
+
+    <div class="logout-btn">
+      <button class="btn btn-outline-light btn-sm" (click)="logout()">LOGOUT</button>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <router-outlet></router-outlet>
+</div>
