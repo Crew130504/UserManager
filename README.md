@@ -105,12 +105,6 @@ docs           # Architecture and documentation
 
 ---
 
-## License
-
-This project is for educational and demonstration purposes.
-
----
-
 ## Author
 
-Created by the development team as part of a technical assignment.
+JUAN PABLO ANGULO GUERRERO
